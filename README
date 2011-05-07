@@ -1,0 +1,20 @@
+A simple Python GTK (Python-Glade) app to facilitate collecting audio samples matched in time with a source file.
+I created this to collect Query-Target pairs for training my algorithm in my thesis on musical query-by-content.
+
+Built against the Python 2.5.  Python 3 compatibility unknown.  Uses Linux specific tools (was unable to get a pure Python implementation working).
+
+Dependencies:
+  python:  pygtk 2.0, gtk, gtk.glade
+  linux: mplayer, vlc, arecord
+
+This is not polished code.  I was on a time crunch and got it to be just good enough.
+I was hoping to get a nice piece of code that could play any audio type and record a matching query from the user,
+  but several issues occured which I think eventually prevented me from using anything but flac and wav, which is dumb.
+
+Given a directory of target audio files, the app will crawl through for usable ones.
+A random snippet of X seconds from these songs will presented to the user.
+The user can preview the snippet as many times as desired.
+The user then clicks record and the snippet plays again while they record their query.
+  - User should be wearing headphones to prevent leaking the true signal into the query.
+
+Before starting the user enters a User ID so they can work in several sessions and we can keep track of all their work.
